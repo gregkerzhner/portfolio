@@ -1,21 +1,33 @@
-$(document).ready(function(){
-	var x=200;
-	var wiggle = function(tag,delta){
-		if(delta<0){
-			marginRight = tag.css("margin-right");
-			tag.css("margin-right",marginRight-delta);
-			setTimeout(wiggle,200,[tag, delta-1]);
-			
+	$(document).ready(function(){
+		var x=200;
+	var wiggleRight = function(element,delta){
+		var maxWidth;
+		var margin =  parseInt(element.css("margin-left"))+delta
+		element.css("margin-left", margin);
+		delta+=1;
+		maxWidth = (parseInt($(".animation").css("width"))/2)-320
+		if (margin<maxWidth){
+			setTimeout(wiggleRight, 20, element, delta);
+		}
+	}
+	var wiggleLeft = function(element,delta){
+		var margin =  parseInt(element.css("margin-right"))+delta
+		element.css("margin-right", margin);
+		delta+=1;
+		maxWidth = parseInt($(".animation").css("width"))/2
+
+		if (margin<maxWidth){			
+			setTimeout(wiggleLeft, 20, element, delta);
 		}
 		else{
-			//marginLeft = tag.css("margin-left");
-			tag.css("margin-left",0+delta);	
-			setTimeout(wiggle,200,[tag, delta+1]);	
+			element.addClass("fancier");
 		}
-		setTimeout(wiggle,200,[tag, delta+1]);
+
+	
 	}
 
-	wiggle($("#tara"),1);
+	wiggleRight($("#tara"),1);
+	wiggleLeft($("#reynvaan"),1);
 	//wiggle($("#reynvaan"),-1);
 	
 });
