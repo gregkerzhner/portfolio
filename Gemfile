@@ -26,6 +26,14 @@ gem 'haml'
 
 gem 'bootstrap-sass'
 
+gem 'pg'
+
+gem 'heroku'
+
+gem 'rb-readline'
+
+gem 'devise'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
