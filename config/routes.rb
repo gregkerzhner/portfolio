@@ -1,10 +1,17 @@
 Portfolio::Application.routes.draw do
-  devise_for :users
+  #devise_for :users
 
   resources :blog
-  # The priority is based upon order of creation:
-  # first created -> highest priority.
 
+  resources :admin
+
+  devise_for :users do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+    get '/users/sign_in'  => 'devise/sessions#new'
+
+  end
+  # The priority is based upon order of creation:
+  # first created -> highest priorit
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
