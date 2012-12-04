@@ -30,6 +30,9 @@
 
 	wiggleRight($("#tara"),1);
 	wiggleLeft($("#reynvaan"),1);
-
+	$("#enter").click(function(){
+		$(".intro-screen").collapse();
+		$(".main").show();
+	})
 	
 });
