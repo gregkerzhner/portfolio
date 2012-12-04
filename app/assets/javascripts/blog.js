@@ -21,6 +21,8 @@
 		}
 		else{
 			element.addClass("fancier");
+			$(".intro").css("height", "40%")
+			$(".intro").collapse();
 		}
 
 	
@@ -28,6 +30,6 @@
 
 	wiggleRight($("#tara"),1);
 	wiggleLeft($("#reynvaan"),1);
-	//wiggle($("#reynvaan"),-1);
+
 	
 });
