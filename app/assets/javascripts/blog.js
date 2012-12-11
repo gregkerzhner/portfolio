@@ -5,7 +5,7 @@
 		var margin =  parseInt(element.css("margin-left"))+delta
 		element.css("margin-left", margin);
 		delta+=1;
-		maxWidth = (parseInt($(".animation").css("width"))/2)-320
+		maxWidth = (parseInt($(".animation").css("width"))/2)-340
 		if (margin<maxWidth){
 			setTimeout(wiggleRight, 20, element, delta);
 		}
@@ -33,6 +33,7 @@
 	$("#enter").click(function(){
 		$(".intro-screen").collapse();
 		$(".main").show();
+		$("body").css("background-color","white");
 	})
 	
 });

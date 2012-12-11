@@ -1,10 +1,21 @@
 .intro-screen.collapse.in
-	.animation
-		#tara.left.fancy Tara
-		#reynvaan.right.fancy Reynvaan
-	.intro.collapse
-		.fancy A Canon
-		.fancy A lens
-		.fancy A unique vision
-		.fancy.fancier A photographer
-		.btn.btn-success#enter ENTER
+  .animation
+    #tara.left.fancy Tara
+    #reynvaan.right.fancy Reynvaan
+  %p
+  .intro.collapse
+    .fancy A Canon
+    .fancy A lens
+    .fancy A unique vision
+    .fancy.fancier A photographer
+    .btn.btn-success#enter ENTER
+.main.hide
+  .side-nav
+    .fancy.fancier STILL IMAGES
+    - @albums.each do |album|
+      .br
+      .side-nav-link-block
+        .side-nav-link
+          = album.title
+  .album
+    album
