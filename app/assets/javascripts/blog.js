@@ -35,5 +35,22 @@
 		$(".main").show();
 		$("body").css("background-color","white");
 	})
-	
+	$(".album-link").click(function(){
+	  $.ajax({
+        url: "/album",
+        type: "post",
+        data: "title="+this.text,
+        // callback handler that will be called on success
+        success: function(response, textStatus, jqXHR){
+           for(var i = 0; i<response.length;i++){
+            	var photo = response[i]
+           }
+        },
+        // callback handler that will be called on error
+        error: function(jqXHR, textStatus, errorThrown){
+           alert("no")
+        
+        }
+      });
+	})
 });

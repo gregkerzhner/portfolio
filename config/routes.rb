@@ -5,11 +5,15 @@ Portfolio::Application.routes.draw do
 
   resources :admin
 
+  resources :photos
+
   devise_for :users do
     get '/users/sign_out' => 'devise/sessions#destroy'
     get '/users/sign_in'  => 'devise/sessions#new'
 
   end
+
+  post 'album' => 'albums#index'
   # The priority is based upon order of creation:
   # first created -> highest priorit
   # Sample of regular route:

@@ -1,0 +1,7 @@
+.new_photo
+  .fancy.fancier NEW PHOTO
+  = form_for(@photo) do |f|
+    = f.file_field :photo
+    .br
+    = f.collection_select :album_id, Album.all, :id, :title
+    = f.submit class: "btn btn-primary"
