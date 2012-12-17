@@ -43,7 +43,10 @@
         // callback handler that will be called on success
         success: function(response, textStatus, jqXHR){
            for(var i = 0; i<response.length;i++){
-            	var photo = response[i]
+             var photo = $("#renyvaan-photo"+response[i].id)
+             photo.empty();
+             photo.attr("src",response[i].photo.url)	
+
            }
         },
         // callback handler that will be called on error

@@ -18,6 +18,7 @@
         .side-nav-link
           %a.album-link= album.title
   .album
-    .photo
-   
+    - @current_album.photos.each  do |photo|
+      .photo        
+        = image_tag(photo.photo.to_s, class: "reynvaan-photo", id: "reynvaan-photo"+photo.id.to_s)
   
