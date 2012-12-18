@@ -33,7 +33,7 @@
 	$("#enter").click(function(){
 		$(".intro-screen").collapse();
 		$(".main").show();
-		$("body").css("background-color","white");
+		$("body").css("background-color","#212120");
 	})
 	$(".album-link").click(function(){
 	  $(".album-link").removeClass("current");

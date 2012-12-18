@@ -53,24 +53,29 @@ html
         width: 20%
         height: 100%        
         float: left
-        border-right: 2px solid gray
+        
         .fancy
           line-height: 40px
+          margin-bottom: 100px
         .side-nav-link-block
           width: 100%
-          margin: 40px 0px 
+          margin: 10px 0px 
           float: right
           padding-right: 10px
           .side-nav-link
             float: right
             margin-right: 4px
-            font-size: 20px
+            font-size: 14px
             font-weight: bold
             font-color: gray
-            .current
-              color: gray
             .album-link
+              color: gray
               cursor: pointer
+              text-decoration: none
+              &:hover
+                color: #f5c131
+            .current
+              color: #f5c131
 
       .album
         width: 70%
@@ -83,6 +88,7 @@ html
           width: 30%
           height: 30%
           margin: 10px
+          
           .reynvaan-photo
             float: left
             padding: 20px
