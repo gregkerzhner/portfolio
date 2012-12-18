@@ -29,7 +29,7 @@
 	}
 
 	wiggleRight($("#tara"),1);
-	wiggleLeft($("#reynvaan"),1);
+	wiggleLeft($("#reynvaan"),1);	
 	$("#enter").click(function(){
 		$(".intro-screen").collapse();
 		$(".main").show();
@@ -37,6 +37,7 @@
 	})
 	$(".album-link").click(function(){
 	  $(".album-link").removeClass("current");
+	  $("#slider").hide();
 	  $(this).addClass("current");
 	  $.ajax({
         url: "/album",
@@ -54,6 +55,21 @@
 
 
            }
+           $(".reynvaan-photo").click(function(){
+           	 $("#slider").show();
+           	 $(".album").collapse();
+
+           	 for( i = 0;i<response.length;i++){
+           	 	src = response[i].photo.url;
+           	 	if(i === 0){
+           	 		html = '<div class="active item"><img src="'+src+'" alt=""></div>';
+           	 	}
+           	 	else{
+           	 		html = 	'<div class="item"><img src="'+src+'" alt=""></div>';
+           	 	}
+           	 	$(".carousel-inner").append(html);
+           	 }
+           });
         },
         // callback handler that will be called on error
         error: function(jqXHR, textStatus, errorThrown){
@@ -61,5 +77,7 @@
         
         }
       });
+
 	})
+	$(".current").click();
 });

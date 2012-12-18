@@ -12,14 +12,20 @@
 .main.hide
   .side-nav
     .fancy.fancier STILL IMAGES
+    - i = 0
     - @albums.each do |album|
       .br
       .side-nav-link-block
         .side-nav-link
-          %a.album-link= album.title
-  .album
-    - count = 0
-    - @current_album.photos.each  do |photo|
-      .photo        
-        = image_tag(photo.photo.to_s, class: "reynvaan-photo", id: "reynvaan-photo"+count.to_s)
-  
+          - if i == 0
+            %a.album-link.current= album.title
+            - i = i + 1
+          - else
+            %a.album-link= album.title  
+
+  .album.collapse.in
+
+  .carousel.slide#slider
+    .carousel-inner
+    %a.carousel-control.left{"data-slide" => "prev", :href => "#slider"} ‹
+    %a.carousel-control.right{"data-slide" => "next", :href => "#slider"} ›
