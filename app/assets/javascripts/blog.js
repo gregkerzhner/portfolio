@@ -36,16 +36,22 @@
 		$("body").css("background-color","white");
 	})
 	$(".album-link").click(function(){
+	  $(".album-link").removeClass("current");
+	  $(this).addClass("current");
 	  $.ajax({
         url: "/album",
         type: "post",
         data: "title="+this.text,
         // callback handler that will be called on success
         success: function(response, textStatus, jqXHR){
+           var html = '<div class="photo"><img alt="_mg_1036" class="reynvaan-photo" id="reynvaan-photo0" src="/uploads/photo/photo/8/_MG_1036.jpg"></div>';
+		   $(".album").empty();
            for(var i = 0; i<response.length;i++){
-             var photo = $("#renyvaan-photo"+response[i].id)
-             photo.empty();
-             photo.attr("src",response[i].photo.url)	
+	
+             var src = response[i].photo.url;
+             html = '<div class="photo"><img alt="_mg_1036" class="reynvaan-photo" id="reynvaan-photo0" src="'+src+'"></div>';
+            $(".album").append(html);
+
 
            }
         },
