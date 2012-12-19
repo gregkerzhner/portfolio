@@ -1,0 +1,8 @@
+.new_album
+  .fancy.fancier NEW ALBUM
+  = form_for(@album) do |f|
+    = f.text_field :title
+    .br
+   
+    = f.submit class: "btn btn-primary"
+ 

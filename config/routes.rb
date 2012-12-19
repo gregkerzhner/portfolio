@@ -7,6 +7,7 @@ Portfolio::Application.routes.draw do
 
   resources :photos
 
+  resources :albums
   devise_for :users do
     get '/users/sign_out' => 'devise/sessions#destroy'
     get '/users/sign_in'  => 'devise/sessions#new'

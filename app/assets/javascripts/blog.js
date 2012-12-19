@@ -37,7 +37,9 @@
 	})
 	$(".album-link").click(function(){
 	  $(".album-link").removeClass("current");
+	  $(".album").empty();
 	  $("#slider").hide();
+	  $(".album").show();
 	  $(this).addClass("current");
 	  $.ajax({
         url: "/album",
@@ -51,13 +53,16 @@
 	
              var src = response[i].photo.url;
              html = '<div class="photo"><img alt="_mg_1036" class="reynvaan-photo" id="reynvaan-photo0" src="'+src+'"></div>';
-            $(".album").append(html);
+             $(".album").append(html);
 
-
-           }
+           }           
+	  
            $(".reynvaan-photo").click(function(){
+           	 $(".carousel-inner").empty();
+           	 $(".album").hide();
            	 $("#slider").show();
-           	 $(".album").collapse();
+
+         
 
            	 for( i = 0;i<response.length;i++){
            	 	src = response[i].photo.url;
