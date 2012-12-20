@@ -5,23 +5,26 @@
 		var margin =  parseInt(element.css("margin-left"))+delta
 		element.css("margin-left", margin);
 		delta+=1;
-		maxWidth = (parseInt($(".animation").css("width"))/2)-340
-		if (margin<maxWidth){
+		var width = parseInt($("#tara").css("width"));
+		maxWidth = (parseInt($(".animation").css("width"))/2);
+		if ((margin+width+delta)<maxWidth){
 			setTimeout(wiggleRight, 20, element, delta);
-		}
+		}	
 	}
 	var wiggleLeft = function(element,delta){
 		var margin =  parseInt(element.css("margin-right"))+delta
 		element.css("margin-right", margin);
 		delta+=1;
 		maxWidth = parseInt($(".animation").css("width"))/2
-
-		if (margin<maxWidth){			
+		var width = parseInt($("#reynvaan").css("width"));
+		if ((margin+width+delta)<maxWidth){			
 			setTimeout(wiggleLeft, 20, element, delta);
 		}
 		else{
 			element.addClass("fancier");
-			$(".intro").css("height", "40%")
+			$(".intro").css("height", "40%");
+			margin = (parseInt($(".animation").css("width"))/2) - (parseInt($(".intro").css("width"))/2);
+			$(".intro").css("margin-left",margin);
 			$(".intro").collapse();
 		}
 

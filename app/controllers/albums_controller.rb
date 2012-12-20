@@ -8,6 +8,6 @@ class AlbumsController < ApplicationController
 
   def create
     @album = Album.create(params[:album])
-    redirect_to admin_index_path
+  redirect_to admin_index_path
   end
 end

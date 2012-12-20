@@ -1,6 +1,8 @@
 Portfolio::Application.routes.draw do
   #devise_for :users
-
+  root :to => 'blog#index'
+  match "/" => 'blog#index'
+  match "" => 'blog#index'
   resources :blog
 
   resources :admin
