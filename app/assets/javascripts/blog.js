@@ -19,9 +19,10 @@
 		else{
 			var maxMargin = (animationWidth/2) - parseInt($("#tara").css("width"));
 			$("#tara").css("margin-left",maxMargin+"px");
-			$(".intro").css("margin-left",maxMargin+"px");
-			$(".intro").css("height", "40%");
+			$(".intro").css("margin-left",maxMargin+"px");	
+			$(".intro").css("padding-bottom", "10px");		
 			$(".intro").collapse();
+			
 		}
 	}
 	var wiggleLeft = function(element,delta){
@@ -38,7 +39,7 @@
 			var maxMargin =  (animationWidth/2) - parseInt($("#reynvaan").css("width"))-20;
 			$("#reynvaan").css("margin-right",maxMargin+"px");
 			
-			setTimeout(hideIntro, 200);
+			setTimeout(hideIntro, 2000);
 		}
 
 	
