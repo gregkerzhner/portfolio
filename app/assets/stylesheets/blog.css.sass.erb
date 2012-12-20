@@ -1,0 +1,149 @@
+// Place all the styles related to the blog controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap"
+@font-face
+  src: font-url('DecoNeue-Light.ttf') format("truetype")
+  font-family: DecoNeue
+ 
+  font-style: normal
+.hidden
+  display: none
+
+html
+  
+  body
+    -webkit-font-smoothing: antialiased
+    background-color: #212120
+    font-family: DecoNeue
+    height: 100%
+    .fancy
+      font-size: 40px
+      
+      font-weight: bold
+      color: gray
+    .fancier
+      color: #f5c131
+    .right
+      float: right
+      margin-right: 10px
+      margin-bottom: 20px
+    .left
+      float: left
+      margin-left: 0
+      margin-bottom: 20px
+ 
+    .intro-screen
+      background-color: #212120
+      height: 100%
+
+      .intro
+        width: 400px       
+        line-height: 40px
+        margin-bottom: 20px
+        .fancy
+          font-size: 32px
+        .fancier
+          margin-top: 10px
+      .animation
+        margin-top: 10%
+        width: 100%
+        height: 20%
+        #reynvaan, #tara
+          font-family: arial
+        .fancy
+          font-size: 50px
+           
+    .contact-page
+      width: 100%
+      height: 100%
+      color: gray
+      font-size: 20px
+      .contact-paragraph
+        margin: 50px 20%
+        width: 25%
+        line-height: 20px
+        .fancy-email
+          color: #f5c131
+        #contact-go-back
+          color: gray
+          &:hover
+            color: #f5c131
+            cursor: pointer
+            font-size: 22px
+    .main
+      height: 100%
+      width: 100%
+      .contact
+        width: 20%
+        height: 10%
+        float: right
+        margin-top: 10px
+        .contact-link
+          color: gray
+          font-size: 20px
+          &:hover
+            color: #f5c131
+            text-decoration: none
+            cursor: pointer
+            font-size: 22px
+      .side-nav
+        width: 20%
+        height: 85%        
+        float: left
+        .fancy
+          line-height: 40px
+          margin: 10px 0px 100px 10px
+          &:hover
+            color: white
+            cursor: pointer
+
+        .side-nav-link-block
+          width: 100%
+          margin: 10px 0px 
+          float: right
+          padding-right: 10px
+          .side-nav-link
+            float: right
+            margin-right: 4px
+            font-size: 14px
+            font-weight: bold
+            font-color: gray
+            .album-link
+              
+              color: gray
+              cursor: pointer
+              text-decoration: none
+              &:hover
+                color: #f5c131
+                font-size: 16px
+            .current
+              color: #f5c131
+      .carousel
+        width: 70%
+        height: 90%
+        float: left
+        margin: 30px
+        img
+          height: 90%
+
+      .album
+        width: 70%
+        height: 100%
+        float: left
+        margin-left: 10px
+       
+        .photo
+          float: left
+    
+          height: 30%
+          margin: 10px
+          
+          .reynvaan-photo
+            width: auto
+            margin: 0 auto
+            height: 100%
+            cursor: pointer
+            border: 1px #212120 solid
+            &:hover
+              border: 1px #f5c131 solid
