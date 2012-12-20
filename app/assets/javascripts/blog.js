@@ -14,11 +14,13 @@
 		var width = parseInt($("#tara").css("width"));
 		maxWidth = (parseInt($(".animation").css("width"))/2);
 		if ((margin+width+delta)<maxWidth){
-			setTimeout(wiggleRight, 20, element, delta);
+			setTimeout(wiggleRight, 10, element, delta);
+			$(".animation").css("height", parseInt($(".animation").css("height"))+1);
 		}	
 		else{
 			var maxMargin = (animationWidth/2) - parseInt($("#tara").css("width"));
 			$("#tara").css("margin-left",maxMargin+"px");
+			//$("body").css("height", parseInt($("body").css("height"))+1);
 			$(".intro").css("margin-left",maxMargin+"px");	
 			$(".intro").css("padding-bottom", "10px");		
 			$(".intro").collapse();
@@ -32,7 +34,7 @@
 		maxWidth = parseInt($(".animation").css("width"))/2
 		var width = parseInt($("#reynvaan").css("width"));
 		if ((margin+width+delta)<maxWidth){			
-			setTimeout(wiggleLeft, 20, element, delta);
+			setTimeout(wiggleLeft, 10, element, delta);
 		}
 		else{
 			element.addClass("fancier");
