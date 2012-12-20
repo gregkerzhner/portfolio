@@ -11,7 +11,7 @@
     -#.btn.btn-success#enter ENTER
 .main.hide
   .side-nav
-    .fancy.fancier STILL IMAGES
+    .fancy.fancier#name TARA REYNVAAN
     - i = 0
     - @albums.each do |album|
       .br
@@ -21,7 +21,9 @@
             %a.album-link.current= album.title
             - i = i + 1
           - else
-            %a.album-link= album.title  
+            %a.album-link= album.title 
+  .contact
+    %a.contact-link ABOUT | CONTACT  
 
   .album.collapse.in
 
@@ -29,3 +31,11 @@
     .carousel-inner
     %a.carousel-control.left{"data-slide" => "prev", :href => "#slider"} ‹
     %a.carousel-control.right{"data-slide" => "next", :href => "#slider"} ›
+.contact-page.hide
+  .contact-paragraph
+    Tara Reynvaan hails from Bend oregon, packing a keen eye and a bodonkadonk.
+  .contact-paragraph
+    For contract inquires, please email at 
+    .fancy-email tarareynvaan@gmail.com
+  .contact-paragraph
+    #contact-go-back go back

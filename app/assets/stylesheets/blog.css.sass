@@ -49,17 +49,49 @@ html
         height: 20%
         .fancy
           font-size: 50px
+    .contact-page
+      width: 100%
+      height: 100%
+      color: #f5c131
+      font-size: 20px
+      .contact-paragraph
+        margin: 50px 20%
+        width: 25%
+        line-height: 20px
+        .fancy-email
+          color: white
+        #contact-go-back
+          color: white
+          &:hover
+            color: #f5c131
+            cursor: pointer
     .main
       height: 100%
       width: 100%
+      .contact
+        width: 20%
+        height: 10%
+        float: right
+        margin-top: 10px
+        .contact-link
+          color: gray
+          font-size: 20px
+          &:hover
+            color: #f5c131
+            text-decoration: none
+            cursor: pointer
+            font-size: 22px
       .side-nav
         width: 20%
-        height: 100%        
+        height: 85%        
         float: left
-        
         .fancy
           line-height: 40px
-          margin-bottom: 100px
+          margin: 10px 0px 100px 10px
+          &:hover
+            color: white
+            cursor: pointer
+
         .side-nav-link-block
           width: 100%
           margin: 10px 0px 
@@ -78,6 +110,7 @@ html
               text-decoration: none
               &:hover
                 color: #f5c131
+                font-size: 16px
             .current
               color: #f5c131
       .carousel
@@ -86,7 +119,7 @@ html
         float: left
         margin: 30px
         img
-          height: 100%
+          height: 90%
 
       .album
         width: 70%
@@ -105,3 +138,6 @@ html
             margin: 0 auto
             height: 100%
             cursor: pointer
+            border: 1px #212120 solid
+            &:hover
+              border: 1px #f5c131 solid
