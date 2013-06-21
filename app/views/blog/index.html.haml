@@ -20,8 +20,8 @@
     .fancy pixels
     .fancy.fancier FOTOGRAPHY
     
-.main.hide
-  .side-nav
+.main.row.hide
+  .side-nav.span4
     .fancy.fancier#name TARA REYNVAAN
     - i = 0
     - @albums.each do |album|
@@ -36,9 +36,9 @@
   .contact
     %a.contact-link ABOUT | CONTACT  
 
-  .album.collapse.in
+  .album.collapse.in.span10
 
-  .carousel.slide#slider
+  .carousel.slide#slider.span10
     .carousel-inner
     %a.carousel-control.left{"data-slide" => "prev", :href => "#slider"} ‹
     %a.carousel-control.right{"data-slide" => "next", :href => "#slider"} ›

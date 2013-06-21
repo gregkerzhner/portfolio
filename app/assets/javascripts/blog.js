@@ -74,18 +74,6 @@ $(document).ready(function(){
              html = '<div class="photo"><img alt="_mg_1036" class="reynvaan-photo" id="reynvaan-photo'+i+'" src="'+src+'"></div>';
              $(".album").append(html);
            }  
-           $(".album").css("height","auto");
-           if(isMobile()) {
-             $(".photo").css("width","90%");         
-           }
-           else{ 
-           	$(".photo").css("width","30%");  
-           }
-           var albumHeight = parseInt($("html").css("height"));
-           var photoHeight = albumHeight*3/10;
-           $(".photo").css("height",photoHeight + "px");         
-	  	   $(".reynvaan-photo").css("height","100%");
-	  	   $(".reynvaan-photo").css("width","auto");	
            $(".reynvaan-photo").click(function(){
            	 var id = $(this).attr("id");
            	 var index = parseInt(id[14]+id[15]);           	 
@@ -102,10 +90,6 @@ $(document).ready(function(){
            	 	}
            	 	$(".carousel-inner").append(html);
            	 }
-       		 if(isMobile()){
-       		 	$("#slider").css("height","600px");
-       		 	$("img").css("height","80%");
-       		 }
        		});
 
         }
@@ -124,8 +108,4 @@ $(document).ready(function(){
 		$(".contact-page").hide();
 		$(".main").show();
 	});
-	var isMobile = function(){
-		return (navigator.userAgent.match(/iPhone/i)) || 
- 				(navigator.userAgent.match(/iPod/i));
-	}
 });
