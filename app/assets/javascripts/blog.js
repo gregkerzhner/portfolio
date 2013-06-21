@@ -1,5 +1,12 @@
-	$(document).ready(function(){
-		var x=200;
+
+
+$(document).ready(function(){
+	var x=200;
+	if($.browser.msie){	
+		$(".ie-fail").removeClass("hide");
+		$(".intro-screen").hide();
+		return;
+	}
 	var hideIntro = function(){
 		$(".intro-screen").collapse();
 		$(".main").show();
@@ -20,7 +27,6 @@
 		else{
 			var maxMargin = (animationWidth/2) - parseInt($("#tara").css("width"));
 			$("#tara").css("margin-left",maxMargin+"px");
-			//$("body").css("height", parseInt($("body").css("height"))+1);
 			$(".intro").css("margin-left",maxMargin+"px");	
 			$(".intro").css("padding-bottom", "10px");		
 			$(".intro").collapse();
@@ -39,26 +45,10 @@
 		else{
 			element.addClass("fancier");
 			var maxMargin =  (animationWidth/2) - parseInt($("#reynvaan").css("width"))-20;
-			$("#reynvaan").css("margin-right",maxMargin+"px");
-			
+			$("#reynvaan").css("margin-right",maxMargin+"px");			
 			setTimeout(hideIntro, 2000);
-		}
-
-	
+		}	
 	}
-	var collapse = function(element, delta){
-		var currentHeight = element.css("height")
-		var newHeight = parseInt(currentHeight) - delta;
-		if(newHeight>0){
-			element.css("height",newHeight+"px");
-			delta = delta + 200;
-			setTimeout(collapse, 20 , element, delta);
-		}
-		else{
-			element.css("height","0px");
-		}
-	};
-
 	wiggleRight($("#tara"),1);
 	wiggleLeft($("#reynvaan"),1);	
 	$("#enter").click(function(){
@@ -67,36 +57,41 @@
 		$("body").css("background-color","#212120");
 	})
 	$(".album-link").click(function(){
-	  $(".album-link").removeClass("current");
-	  
+	  $(".album-link").removeClass("current");	  
 	  $("#slider").hide();
-	 
-	  $(".album").css("height","100%");
 	  $(".album").empty();
+	  $(".album").css("height","auto");
 	  $(this).addClass("current");
 	  $.ajax({
         url: "/album",
         type: "post",
         data: "title="+this.text,
-
+        dataType : 'json',
         success: function(response, textStatus, jqXHR){
-
            var html = '<div class="photo"><img alt="_mg_1036" class="reynvaan-photo" id="reynvaan-photo0" src="/uploads/photo/photo/8/_MG_1036.jpg"></div>';
 		   for(var i = 0; i<response.length;i++){	
              var src = response[i].photo.url;
              html = '<div class="photo"><img alt="_mg_1036" class="reynvaan-photo" id="reynvaan-photo'+i+'" src="'+src+'"></div>';
              $(".album").append(html);
            }  
-           $(".photo").css("width","30%")         
+           $(".album").css("height","auto");
+           if(isMobile()) {
+             $(".photo").css("width","90%");         
+           }
+           else{ 
+           	$(".photo").css("width","30%");  
+           }
+           var albumHeight = parseInt($("html").css("height"));
+           var photoHeight = albumHeight*3/10;
+           $(".photo").css("height",photoHeight + "px");         
 	  	   $(".reynvaan-photo").css("height","100%");
 	  	   $(".reynvaan-photo").css("width","auto");	
            $(".reynvaan-photo").click(function(){
            	 var id = $(this).attr("id");
-           	 var index = parseInt(id[14]+id[15]);
-           	 
+           	 var index = parseInt(id[14]+id[15]);           	 
            	 $(".carousel-inner").empty();
-           	 setTimeout(collapse,20,$(".album"),100);           	
-           	 $("#slider").show();   
+           	 $(".album").css("height","0px");          	
+           	 $("#slider").show(); 
            	 for( i = 0;i<response.length;i++){
            	 	src = response[i].photo.url;
            	 	if(i === index){
@@ -107,16 +102,14 @@
            	 	}
            	 	$(".carousel-inner").append(html);
            	 }
-           });
+       		 if(isMobile()){
+       		 	$("#slider").css("height","600px");
+       		 	$("img").css("height","80%");
+       		 }
+       		});
 
-        },
-        // callback handler that will be called on error
-        error: function(jqXHR, textStatus, errorThrown){
-           alert("no")
-        
         }
       });
-
 	})
 	$(".current").click();
 	$(".contact-link").click(function(){
@@ -130,5 +123,9 @@
 	$("#contact-go-back").click(function(){
 		$(".contact-page").hide();
 		$(".main").show();
-	})
+	});
+	var isMobile = function(){
+		return (navigator.userAgent.match(/iPhone/i)) || 
+ 				(navigator.userAgent.match(/iPod/i));
+	}
 });

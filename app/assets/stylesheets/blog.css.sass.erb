@@ -10,8 +10,28 @@
   display: none
 
 html
-  
+  height: 100%
   body
+    .ie-fail
+      background-color: black
+      color: white
+      font-size: 25px
+      font-weight: bold
+      font-family: Arial
+      line-height: 30px
+      .fail-paragraph
+        float: left
+        width: 80%
+        margin: 20px
+        .fail-header
+          font-size: 28px
+          float: left
+          color: pink
+          margin-right: 10px
+        .chompy
+          width: 30px
+          height: 30px
+          float: left
     -webkit-font-smoothing: antialiased
     background-color: #212120
     font-family: DecoNeue
@@ -107,17 +127,16 @@ html
           .side-nav-link
             float: right
             margin-right: 4px
-            font-size: 14px
             font-weight: bold
             font-color: gray
             .album-link
-              
+              font-size: 18px
               color: gray
               cursor: pointer
               text-decoration: none
               &:hover
                 color: #f5c131
-                font-size: 16px
+                font-size: 19px
             .current
               color: #f5c131
       .carousel
@@ -145,6 +164,6 @@ html
             margin: 0 auto
             height: 100%
             cursor: pointer
-            border: 1px #212120 solid
+            border: 1px white solid
             &:hover
               border: 1px #f5c131 solid

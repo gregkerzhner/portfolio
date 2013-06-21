@@ -1,5 +1,7 @@
 .admin  
-  admin index
-  = render "new_photo"
-  = render "new_album"
-  = render "destroy_album"
+  .block
+    = render "new_photo"
+    = render "new_album"
+  .block
+    = render "destroy_album"
+    = render "remove_photo"

@@ -3,6 +3,8 @@ Portfolio::Application.routes.draw do
   root :to => 'blog#index'
   match "/" => 'blog#index'
   match "" => 'blog#index'
+  match "/album/:id/delete"  => "albums#destroy", as: :album_destroy
+  match "/photo/:id/delete"  => "photos#destroy", as: :photo_destroy
   resources :blog
 
   resources :admin

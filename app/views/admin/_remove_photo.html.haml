@@ -1,0 +1,8 @@
+.destroy_photo
+  .fancy.fancier DESTROY PHOTOs
+  - Album.all.each do |album|
+    .p
+    = album.title
+    -album.photos.each do |photo|
+      .p
+      = link_to "Destroy photo #{photo.photo.to_s}", photo_destroy_path(photo.id), class: "photo_destroy_link"

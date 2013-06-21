@@ -1,6 +1,5 @@
-.new_photo
-  .fancy.fancier DESTOROY ALBUM
-  = form_for(@album) do |f|
-
-    = f.collection_select :id, Album.all, :id, :title
-    = f.submit "DESTROY!", class: "btn btn-danger"
+.destroy_album
+  .fancy.fancier DESTROY ALBUM
+  - Album.all.each do |album|
+    .p
+    = link_to "Destroy album #{album.title}", album_destroy_path(album.id)

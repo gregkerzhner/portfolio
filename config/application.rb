@@ -61,5 +61,6 @@ module Portfolio
     config.assets.version = '1.0'
 
     config.assets.precompile += %w( .ttf )
+
   end
 end
