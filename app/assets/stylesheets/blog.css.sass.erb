@@ -92,7 +92,10 @@ html
             color: #f5c131
             cursor: pointer
             font-size: 22px
+  @media (min-width: 768px) 
     .main
+      .contact-responsive
+        display: none
       height: 100%
       width: 100%
       .contact
@@ -135,7 +138,6 @@ html
                 font-size: 19px
             .current
               color: #f5c131
-    @media (min-width: 768px) 
       .carousel
         margin: 30px
         img
@@ -150,6 +152,67 @@ html
         .photo
           float: left
           height: 300px 
+          margin: 10px
+          
+          .reynvaan-photo
+            height: 100%
+            cursor: pointer
+            border: 1px white solid
+            &:hover
+              border: 1px #f5c131 solid
+  @media (min-width: 320px) and (max-width: 480px)
+    .main
+      height: 100%
+      width: 100%
+      .contact
+        display: none
+      .contact-responsive
+        width: 80%
+        float: right
+        margin-top: 10px
+        .contact-link
+          color: gray
+          font-size: 20px
+      .side-nav
+        .fancy
+          line-height: 40px
+          margin: 10px 0px 10px 10px
+          &:hover
+            color: white
+            cursor: pointer
+        .side-nav-link-block
+          width: 20%
+          margin: 10px 0px 
+          float: left
+          padding-right: 10px
+          .side-nav-link
+            float: left
+            margin-right: 4px
+            font-weight: bold
+            font-color: gray
+            .album-link
+              font-size: 18px
+              color: gray
+              cursor: pointer
+              text-decoration: none
+              &:hover
+                color: #f5c131
+                font-size: 19px
+            .current
+              color: #f5c131
+      .carousel
+        width: 320px
+        img
+          height: 200px
+
+      .album
+        float: left
+        margin-left: 10px
+        width: 320px
+       
+        .photo
+          float: left
+          height: 100px 
           margin: 10px
           
           .reynvaan-photo
